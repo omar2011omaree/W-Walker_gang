@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>W"Walker_GANG</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+}
+
+header {
+    padding: 50px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    color: #00aaff;
+    text-shadow: 0 0 20px #00aaff;
+}
+
+header p {
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    width: 260px;
+    padding: 25px;
+    border-radius: 15px;
+    transition: 0.4s;
+    box-shadow: 0 0 15px rgba(0,170,255,0.3);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px #00aaff;
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #00aaff;
+    object-fit: cover;
+}
+
+.name {
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #00ccff;
+}
+
+.desc {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #bbb;
+}
+
+.discord-btn {
+    display: inline-block;
+    margin: 40px 0;
+    padding: 15px 30px;
+    background: #008cff;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.discord-btn:hover {
+    background: #00aaff;
+    box-shadow: 0 0 20px #00aaff;
+}
+
+footer {
+    margin: 20px 0;
+    color: #888;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔥  W"Walker_GANG 🔥</h1>
+    <p>القوة – الولاء – السيطرة</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <img src="https://discordapp.com/channels/@me/1461477662445797466/1474095173309829335" alt="">
+        <div class="name">Ashraf Hacker</div>
+        <div class="desc">الزعيم 👑</div>
+    </div>
+
+    <div class="card">
+        <img src="https://discordapp.com/channels/@me/1461477662445797466/1474095173309829335" alt="">
+        <div class="name">Sniper King</div>
+        <div class="desc">قناص العصابة 🎯</div>
+    </div>
+
+    <div class="card">
+        <img src="https://discordapp.com/channels/@me/1461477662445797466/1474095173309829335" alt="">
+        <div class="name">Dark Ghost</div>
+        <div class="desc">العقل المدبر 🧠</div>
+    </div>
+
+</div>
+
+<a class="discord-btn" href="https://discord.gg/ANy2Qjgn" target="_blank">
+    دخول سيرفر الديسكورد 💬
+</a>
+
+<footer>
+    © 2026 North Gang - All Rights Reserved
+</footer>
+
+<script>
+// تأثير بسيط عند تحميل الصفحة
+window.onload = function() {
+    document.body.style.opacity = "0";
+    setTimeout(() => {
+        document.body.style.transition = "1s";
+        document.body.style.opacity = "1";
+    }, 100);
+}
+</script>
+
+</body>
+</html>
