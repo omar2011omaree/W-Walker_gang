@@ -3,172 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>W Walker GANG</title>
+<title>W Walker Gang</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    scroll-behavior: smooth;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Arial',sans-serif;
+scroll-behavior:smooth;
 }
 
-body {
-    background: #0f2027;
-    color: white;
-    text-align: center;
-    overflow-x: hidden;
+body{
+background:linear-gradient(135deg,#001428,#002b55,#003d80);
+color:white;
+overflow-x:hidden;
+text-align:center;
 }
 
 /* خلفية */
-#bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
+#bg{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
 }
 
-/* ====== NAVBAR ====== */
-.navbar {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px;
-    font-weight: bold;
-    font-size: 20px;
+/* NAV */
+.navbar{
+display:flex;
+justify-content:center;
+gap:50px;
+padding:30px;
+font-weight:bold;
+font-size:18px;
 }
 
-.navbar a {
-    text-decoration: none;
-    background: linear-gradient(90deg, #001f3f, #00aaff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: 0.3s;
+.navbar a{
+color:white;
+text-decoration:none;
+transition:.3s;
+position:relative;
 }
 
-.navbar a:hover {
-    text-shadow: 0 0 15px #00aaff;
-    transform: scale(1.1);
+.navbar a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:#00ccff;
+transition:.3s;
 }
 
-/* العنوان */
-header {
-    padding: 60px 20px;
+.navbar a:hover::after{
+width:100%;
 }
 
-header h1 {
-    font-size: 60px;
-    font-weight: 900;
-    background: linear-gradient(90deg, #001f3f, #00ccff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(0,170,255,0.4);
+/* HERO */
+.hero{
+min-height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:100px 20px;
 }
 
-header p {
-    color: #00ccff;
-    margin-top: 10px;
+/* GLITCH */
+.glitch{
+font-size:95px;
+font-weight:900;
+color:white;
+position:relative;
+animation:glitch 2s infinite;
 }
 
-/* الليدرات */
-.leaders {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin: 80px 0;
+@keyframes glitch{
+0%{text-shadow:3px 3px #00ccff,-3px -3px #0044ff;}
+25%{text-shadow:-3px 3px #00ccff,3px -3px #0044ff;}
+50%{text-shadow:3px -3px #00ccff,-3px 3px #0044ff;}
+75%{text-shadow:-3px -3px #00ccff,3px 3px #0044ff;}
+100%{text-shadow:0 0 30px #00ccff;}
 }
 
-.leader-card {
-    background: rgba(255,255,255,0.05);
-    width: 220px;
-    padding: 20px;
-    border-radius: 15px;
-    transition: 0.4s;
-    box-shadow: 0 0 15px rgba(0,170,255,0.3);
+.subtitle{
+margin-top:25px;
+font-size:24px;
+color:#00ccff;
 }
 
-.leader-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 30px #00aaff;
+/* أزرار */
+.buttons{
+margin-top:50px;
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
-.leader-card img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    border: 3px solid #00aaff;
-    object-fit: cover;
+.btn{
+padding:15px 40px;
+border-radius:40px;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+border:2px solid #00ccff;
+background:transparent;
+color:white;
 }
 
-.name {
-    margin-top: 12px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #00ccff;
+.btn:hover{
+background:#00ccff;
+box-shadow:0 0 20px #00ccff;
 }
 
-.rank {
-    font-size: 14px;
-    color: #bbb;
-    margin-top: 5px;
+/* زر بنفسجي مضيء */
+.btn-purple{
+background:linear-gradient(90deg,#5f5fff,#8c6bff);
+border:none;
+box-shadow:0 0 20px rgba(140,107,255,0.7);
 }
 
-/* زر الديسكورد */
-.discord-btn {
-    display: inline-block;
-    margin: 40px 0;
-    padding: 15px 30px;
-    background: #008cff;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 18px;
-    transition: 0.3s;
+.btn-purple:hover{
+box-shadow:0 0 35px rgba(140,107,255,1);
+transform:scale(1.05);
 }
 
-.discord-btn:hover {
-    background: #00aaff;
-    box-shadow: 0 0 20px #00aaff;
+/* Section طويلة */
+.section{
+padding:150px 20px;
 }
 
-/* شكر خاص */
-.special-thanks {
-    margin-top: 80px;
-}
-
-.special-thanks h2 {
-    font-size: 30px;
-    font-weight: bold;
-    background: linear-gradient(90deg, #001f3f, #00ccff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 30px;
-}
-
-.thanks-names {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.thanks-names span {
-    background: rgba(255,255,255,0.05);
-    padding: 10px 20px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.thanks-names span:hover {
-    background: #00aaff;
-    box-shadow: 0 0 15px #00aaff;
-}
-
-footer {
-    margin: 40px 0;
-    color: #888;
+footer{
+padding:50px;
+background:#001428;
+color:#aaa;
 }
 </style>
 </head>
@@ -177,115 +148,87 @@ footer {
 
 <canvas id="bg"></canvas>
 
-<!-- NAVIGATION -->
 <div class="navbar">
-    <a href="#">Home Page</a>
-    <a href="#leaders">Owner</a>
-    <a href="#thanks">شكراً خاص</a>
+<a href="#">Home Page</a>
+<a href="#leaders">Owner</a>
+<a href="#thanks">شكراً خاص</a>
 </div>
 
-<header>
-    <h1>W.WALKER GANG</h1>
-    <p>القوة، الولاء، والسيادة</p>
-</header>
+<div class="hero">
+<div class="glitch">W.WALKER GANG</div>
+<div class="subtitle">القوة، الولاء، والسيادة</div>
 
-<!-- الليدرات -->
-<div id="leaders" class="leaders">
-
-    <div class="leader-card">
-        <img src="https://j.top4top.io/p_3702etidt1.jpg">
-        <div class="name">Doctor_Black</div>
-        <div class="rank">OWNER 👑</div>
-    </div>
-
-    <div class="leader-card">
-        <img src="https://j.top4top.io/p_3702etidt1.jpg">
-        <div class="name">Dark</div>
-        <div class="rank">Founder 🎯</div>
-    </div>
-
-    <div class="leader-card">
-        <img src="https://j.top4top.io/p_3702etidt1.jpg">
-        <div class="name">OMAR</div>
-        <div class="rank">Co Leader 🧠</div>
-    </div>
-
+<div class="buttons">
+<button class="btn">التقديم الالكتروني</button>
+<button class="btn">صور القبول</button>
+<button class="btn btn-purple">انضم إلينا</button>
+</div>
 </div>
 
-<a class="discord-btn" href="https://discord.gg/ANy2Qjgn" target="_blank">
-    دخول سيرفر الديسكورد 💬
-</a>
+<div id="leaders" class="section">
+<h2 style="font-size:40px;margin-bottom:20px;">قسم القادة</h2>
+<p style="color:#ccc;">هنا تضيف الليدرات بالشكل اللي تحبه</p>
+</div>
 
-<!-- شكر خاص -->
-<div id="thanks" class="special-thanks">
-    <h2>✨ شكراً خاص ✨</h2>
-
-    <div class="thanks-names">
-        <span>Body</span>
-        <span>Boby</span>
-        <span>Azzam</span>
-        <span>Ineista</span>
-        <span>Shadow</span>
-        <span>Ghost</span>
-    </div>
+<div id="thanks" class="section">
+<h2 style="font-size:40px;margin-bottom:20px;">✨ شكراً خاص ✨</h2>
+<p style="color:#ccc;">Body - Azzam - Shadow - Ghost - Omar</p>
 </div>
 
 <footer>
-    © 2026 W Walker Gang - All Rights Reserved
+© 2026 W Walker Gang - All Rights Reserved
 </footer>
 
 <script>
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
 
-let particles = [];
-
-for(let i = 0; i < 80; i++){
-    particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5),
-        vy: (Math.random() - 0.5)
-    });
+let particles=[];
+for(let i=0;i<100;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5),
+vy:(Math.random()-0.5)
+});
 }
 
 function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.clearRect(0,0,canvas.width,canvas.height);
 
-    for(let i = 0; i < particles.length; i++){
-        let p = particles[i];
+for(let i=0;i<particles.length;i++){
+let p=particles[i];
+p.x+=p.vx;
+p.y+=p.vy;
 
-        p.x += p.vx;
-        p.y += p.vy;
+if(p.x<0||p.x>canvas.width)p.vx*=-1;
+if(p.y<0||p.y>canvas.height)p.vy*=-1;
 
-        if(p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if(p.y < 0 || p.y > canvas.height) p.vy *= -1;
+ctx.beginPath();
+ctx.arc(p.x,p.y,2,0,Math.PI*2);
+ctx.fillStyle="#00ccff";
+ctx.fill();
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, 2, 0, Math.PI*2);
-        ctx.fillStyle = "#00aaff";
-        ctx.fill();
+for(let j=i+1;j<particles.length;j++){
+let p2=particles[j];
+let dx=p.x-p2.x;
+let dy=p.y-p2.y;
+let dist=Math.sqrt(dx*dx+dy*dy);
 
-        for(let j = i+1; j < particles.length; j++){
-            let p2 = particles[j];
-            let dx = p.x - p2.x;
-            let dy = p.y - p2.y;
-            let dist = Math.sqrt(dx*dx + dy*dy);
+if(dist<120){
+ctx.beginPath();
+ctx.moveTo(p.x,p.y);
+ctx.lineTo(p2.x,p2.y);
+ctx.strokeStyle="rgba(0,204,255,0.2)";
+ctx.stroke();
+}
+}
+}
 
-            if(dist < 120){
-                ctx.beginPath();
-                ctx.moveTo(p.x, p.y);
-                ctx.lineTo(p2.x, p2.y);
-                ctx.strokeStyle = "rgba(0,170,255,0.3)";
-                ctx.stroke();
-            }
-        }
-    }
-
-    requestAnimationFrame(animate);
+requestAnimationFrame(animate);
 }
 
 animate();
