@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>W"Walker_GANG</title>
+<title>W Walker GANG</title>
 
 <style>
 * {
@@ -14,11 +14,21 @@
 }
 
 body {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background: #0f2027;
     color: white;
     text-align: center;
+    overflow-x: hidden;
 }
 
+/* خلفية متحركة */
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* العنوان */
 header {
     padding: 50px 20px;
 }
@@ -34,17 +44,11 @@ header p {
     margin-top: 10px;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 40px 20px;
-}
-
+/* الكارت */
 .card {
     background: rgba(255,255,255,0.05);
-    width: 260px;
+    width: 300px;
+    margin: auto;
     padding: 25px;
     border-radius: 15px;
     transition: 0.4s;
@@ -77,6 +81,33 @@ header p {
     color: #bbb;
 }
 
+/* أسماء بدون صور */
+.members {
+    margin-top: 20px;
+}
+
+.members h2 {
+    margin-bottom: 10px;
+    color: #00aaff;
+}
+
+.members ul {
+    list-style: none;
+}
+
+.members li {
+    margin: 6px 0;
+    font-size: 18px;
+    color: #ddd;
+    transition: 0.3s;
+}
+
+.members li:hover {
+    color: #00ccff;
+    text-shadow: 0 0 10px #00aaff;
+}
+
+/* زر الديسكورد */
 .discord-btn {
     display: inline-block;
     margin: 40px 0;
@@ -104,57 +135,95 @@ footer {
 
 <body>
 
+<canvas id="bg"></canvas>
+
 <header>
-    <h1>🔥  W"Walker_GANG 🔥</h1>
-    <p>القوة – العظمه– السيطرة</p>
+    <h1>🔥 W Walker_GANG 🔥</h1>
+    <p>القوة – العظمة – السيطرة</p>
 </header>
 
-<div class="container">
+<div class="card">
+    <img src="https://j.top4top.io/p_3702etidt1.jpg" alt="">
+    <div class="name">Doctor_Black</div>
+    <div class="desc">OWNER 👑</div>
 
-    <div class="card">
-        <img src="https://discordapp.com/channels/@me/1461477662445797466/1474095173309829335" alt="">
-        <div class="name">Doctor_Black</div>
-        <div class="desc">OWNER 👑</div>
+    <!-- أسماء بدون صور تحت الليدر -->
+    <div class="members">
+        <h2>Members</h2>
+        <ul>
+            <li>Dark 🎯</li>
+            <li>OMAR 🧠</li>
+            <li>Body ⚔️</li>
+            <li>Shadow 🔥</li>
+            <li>Ghost 💀</li>
+        </ul>
     </div>
-
-    <div class="card">
-        <img src="https://j.top4top.io/p_3702etidt1.jpg" alt="">
-        <div class="name"> Dark </div>
-        <div class="desc">Founder 🎯</div>
-    </div>
-
-    <div class="card">
-        <img src="https://j.top4top.io/p_3702etidt1.jpg" alt="">
-        <div class="name">OMAR</div>
-        <div class="desc">Co 🧠</div>
-    </div>
-
 </div>
-  
-    <div class="card">
-        <img src="https://discordapp.com/channels/@me/1461477662445797466/1474095173309829335" alt="">
-        <div class="name">Body</div>
-        <div class="desc">Owner 👑</div>
-    </div>
-
 
 <a class="discord-btn" href="https://discord.gg/ANy2Qjgn" target="_blank">
     دخول سيرفر الديسكورد 💬
 </a>
 
 <footer>
-    © 2026 North Gang - All Rights Reserved
+    © 2026 W Walker Gang - All Rights Reserved
 </footer>
 
 <script>
-// تأثير بسيط عند تحميل الصفحة
-window.onload = function() {
-    document.body.style.opacity = "0";
-    setTimeout(() => {
-        document.body.style.transition = "1s";
-        document.body.style.opacity = "1";
-    }, 100);
+/* خلفية خطوط هندسية متحركة */
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i = 0; i < 80; i++){
+    particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 1,
+        vy: (Math.random() - 0.5) * 1
+    });
 }
+
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    for(let i = 0; i < particles.length; i++){
+        let p = particles[i];
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if(p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if(p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 2, 0, Math.PI*2);
+        ctx.fillStyle = "#00aaff";
+        ctx.fill();
+
+        for(let j = i+1; j < particles.length; j++){
+            let p2 = particles[j];
+            let dx = p.x - p2.x;
+            let dy = p.y - p2.y;
+            let dist = Math.sqrt(dx*dx + dy*dy);
+
+            if(dist < 120){
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(p2.x, p2.y);
+                ctx.strokeStyle = "rgba(0,170,255,0.3)";
+                ctx.stroke();
+            }
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
+
+animate();
 </script>
 
 </body>
