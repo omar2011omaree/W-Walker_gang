@@ -3,143 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>W Walker Gang</title>
+<title>W Walker GANG</title>
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Arial',sans-serif;
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(135deg,#001428,#002b55,#003d80);
-color:white;
-overflow-x:hidden;
-text-align:center;
+    background: linear-gradient(135deg,#001a33,#002b55,#003d80);
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
 }
 
-/* خلفية */
 #bg{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
 }
 
-/* NAV */
+/* NAVBAR */
 .navbar{
-display:flex;
-justify-content:center;
-gap:50px;
-padding:30px;
-font-weight:bold;
-font-size:18px;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:25px;
+    font-weight:bold;
+    font-size:18px;
 }
 
 .navbar a{
-color:white;
-text-decoration:none;
-transition:.3s;
-position:relative;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
 }
 
-.navbar a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-5px;
-width:0%;
-height:2px;
-background:#00ccff;
-transition:.3s;
+.navbar a:hover{
+    color:#00ccff;
+    text-shadow:0 0 10px #00ccff;
 }
 
-.navbar a:hover::after{
-width:100%;
+/* HEADER */
+header{
+    padding:120px 20px 100px 20px;
 }
 
-/* HERO */
-.hero{
-min-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:100px 20px;
-}
-
-/* GLITCH */
 .glitch{
-font-size:95px;
-font-weight:900;
-color:white;
-position:relative;
-animation:glitch 2s infinite;
+    font-size:65px; /* صغرناه */
+    font-weight:900;
+    color:white;
+    position:relative;
+    animation:glitch 2s infinite;
 }
 
 @keyframes glitch{
-0%{text-shadow:3px 3px #00ccff,-3px -3px #0044ff;}
-25%{text-shadow:-3px 3px #00ccff,3px -3px #0044ff;}
-50%{text-shadow:3px -3px #00ccff,-3px 3px #0044ff;}
-75%{text-shadow:-3px -3px #00ccff,3px 3px #0044ff;}
-100%{text-shadow:0 0 30px #00ccff;}
+    0%{ text-shadow:2px 2px #00ccff,-2px -2px #0044ff; }
+    25%{ text-shadow:-2px 2px #00ccff,2px -2px #0044ff; }
+    50%{ text-shadow:2px -2px #00ccff,-2px 2px #0044ff; }
+    75%{ text-shadow:-2px -2px #00ccff,2px 2px #0044ff; }
+    100%{ text-shadow:0 0 25px #00ccff; }
 }
 
 .subtitle{
-margin-top:25px;
-font-size:24px;
-color:#00ccff;
+    margin-top:20px;
+    font-size:22px;
+    color:#00ccff;
 }
 
-/* أزرار */
-.buttons{
-margin-top:50px;
-display:flex;
-gap:25px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.btn{
-padding:15px 40px;
-border-radius:40px;
-font-size:18px;
-cursor:pointer;
-transition:.3s;
-border:2px solid #00ccff;
-background:transparent;
-color:white;
-}
-
-.btn:hover{
-background:#00ccff;
-box-shadow:0 0 20px #00ccff;
-}
-
-/* زر بنفسجي مضيء */
-.btn-purple{
-background:linear-gradient(90deg,#5f5fff,#8c6bff);
-border:none;
-box-shadow:0 0 20px rgba(140,107,255,0.7);
-}
-
-.btn-purple:hover{
-box-shadow:0 0 35px rgba(140,107,255,1);
-transform:scale(1.05);
-}
-
-/* Section طويلة */
+/* SECTION */
 .section{
-padding:150px 20px;
+    padding:100px 20px;
+}
+
+/* LEADERS */
+.leaders{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+    margin-top:50px;
+}
+
+.leader-card{
+    text-align:center;
+}
+
+.leader-card img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #00ccff;
+    box-shadow:0 0 20px #00ccff;
+    transition:.3s;
+}
+
+.leader-card img:hover{
+    transform:scale(1.1);
+}
+
+.leader-name{
+    margin-top:15px;
+    font-weight:bold;
+    font-size:18px;
+    color:#00ccff;
+}
+
+/* THANKS BOX */
+.thanks-box{
+    margin-top:40px;
+    display:inline-block;
+    padding:30px 60px;
+    border-radius:20px;
+    background:rgba(0,0,0,0.3);
+    border:2px solid #00ccff;
+    box-shadow:0 0 20px rgba(0,204,255,0.4);
+    font-weight:bold;
+    font-size:18px;
+    letter-spacing:1px;
 }
 
 footer{
-padding:50px;
-background:#001428;
-color:#aaa;
+    padding:40px;
+    background:#001a33;
+    margin-top:120px;
+    color:#aaa;
 }
 </style>
 </head>
@@ -149,45 +143,63 @@ color:#aaa;
 <canvas id="bg"></canvas>
 
 <div class="navbar">
-<a href="#">Home Page</a>
-<a href="#leaders">Owner</a>
-<a href="#thanks">شكراً خاص</a>
+    <a href="#">Home Page</a>
+    <a href="#leaders">Leaders</a>
+    <a href="#thanks">Special Thanks</a>
 </div>
 
-<div class="hero">
-<div class="glitch">W.WALKER GANG</div>
-<div class="subtitle">القوة، الولاء، والسيادة</div>
+<header>
+    <div class="glitch">W.Walker Gang</div>
+    <div class="subtitle">Power • Loyalty • Control</div>
+</header>
 
-<div class="buttons">
-<button class="btn">التقديم الالكتروني</button>
-<button class="btn">صور القبول</button>
-<button class="btn btn-purple">انضم إلينا</button>
-</div>
-</div>
-
+<!-- LEADERS SECTION -->
 <div id="leaders" class="section">
-<h2 style="font-size:40px;margin-bottom:20px;">قسم القادة</h2>
-<p style="color:#ccc;">هنا تضيف الليدرات بالشكل اللي تحبه</p>
+    <h2>Leaders</h2>
+
+    <div class="leaders">
+
+        <div class="leader-card">
+            <img src="https://via.placeholder.com/200" alt="">
+            <div class="leader-name">Gang Leader</div>
+        </div>
+
+        <div class="leader-card">
+            <img src="https://via.placeholder.com/200" alt="">
+            <div class="leader-name">Gang Leader</div>
+        </div>
+
+        <div class="leader-card">
+            <img src="https://via.placeholder.com/200" alt="">
+            <div class="leader-name">Gang Leader</div>
+        </div>
+
+    </div>
 </div>
 
+<!-- THANKS -->
 <div id="thanks" class="section">
-<h2 style="font-size:40px;margin-bottom:20px;">✨ شكراً خاص ✨</h2>
-<p style="color:#ccc;">Body - Azzam - Shadow - Ghost - Omar</p>
+    <h2>Special Thanks</h2>
+
+    <div class="thanks-box">
+        Body • Azzam • Shadow • Ghost • Omar
+    </div>
 </div>
 
 <footer>
-© 2026 W Walker Gang - All Rights Reserved
+    © 2026 W Walker Gang - All Rights Reserved
 </footer>
 
 <script>
-const canvas=document.getElementById("bg");
-const ctx=canvas.getContext("2d");
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
 
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 let particles=[];
-for(let i=0;i<100;i++){
+
+for(let i=0;i<70;i++){
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
