@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>W"Walker GANG</title>
+<title>W Walker GANG</title>
 
 <style>
 * {
@@ -20,7 +20,7 @@ body {
     overflow-x: hidden;
 }
 
-/* خلفية متحركة */
+/* الخلفية */
 #bg {
     position: fixed;
     top: 0;
@@ -39,78 +39,54 @@ header h1 {
     text-shadow: 0 0 20px #00aaff;
 }
 
-header p {
-    color: #ccc;
-    margin-top: 10px;
+/* الليدرات */
+.leaders {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 40px 0;
 }
 
-/* الكارت */
-.card {
+.leader-card {
     background: rgba(255,255,255,0.05);
-    width: 300px;
-    margin: auto;
-    padding: 25px;
+    width: 220px;
+    padding: 20px;
     border-radius: 15px;
     transition: 0.4s;
     box-shadow: 0 0 15px rgba(0,170,255,0.3);
 }
 
-.card:hover {
+.leader-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 30px #00aaff;
 }
 
-.card img {
-    width: 120px;
-    height: 120px;
+.leader-card img {
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     border: 3px solid #00aaff;
     object-fit: cover;
 }
 
 .name {
-    margin-top: 15px;
-    font-size: 22px;
+    margin-top: 12px;
+    font-size: 20px;
     font-weight: bold;
     color: #00ccff;
 }
 
-.desc {
+.rank {
     font-size: 14px;
-    margin-top: 8px;
     color: #bbb;
-}
-
-/* أسماء بدون صور */
-.members {
-    margin-top: 20px;
-}
-
-.members h2 {
-    margin-bottom: 10px;
-    color: #00aaff;
-}
-
-.members ul {
-    list-style: none;
-}
-
-.members li {
-    margin: 6px 0;
-    font-size: 18px;
-    color: #ddd;
-    transition: 0.3s;
-}
-
-.members li:hover {
-    color: #00ccff;
-    text-shadow: 0 0 10px #00aaff;
+    margin-top: 5px;
 }
 
 /* زر الديسكورد */
 .discord-btn {
     display: inline-block;
-    margin: 40px 0;
+    margin: 30px 0;
     padding: 15px 30px;
     background: #008cff;
     color: white;
@@ -125,10 +101,38 @@ header p {
     box-shadow: 0 0 20px #00aaff;
 }
 
+/* شكر خاص */
+.special-thanks {
+    margin-top: 30px;
+}
+
+.special-thanks h2 {
+    color: #00aaff;
+    margin-bottom: 20px;
+}
+
+.thanks-names {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.thanks-names span {
+    background: rgba(255,255,255,0.05);
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.thanks-names span:hover {
+    background: #00aaff;
+    box-shadow: 0 0 15px #00aaff;
+}
+
 footer {
-    margin: 20px 0;
+    margin: 30px 0;
     color: #888;
-    font-size: 14px;
 }
 </style>
 </head>
@@ -142,39 +146,52 @@ footer {
     <p>القوة – العظمة – السيطرة</p>
 </header>
 
-<div class="card">
-    <img src="https://j.top4top.io/p_3702etidt1.jpg" alt="">
-    <div class="name">Doctor_Black</div>
-    <div class="desc">OWNER 👑</div> 
-    
-    <div class="card">
-    <img src="https://j.top4top.io/p_3702etidt1.jpg" alt="">
-    <div class="name">Doctor_Black</div>
-    <div class="desc">OWNER 👑</div>
+<!-- الليدرات -->
+<div class="leaders">
 
-    <!-- شكر خاص -->
-    <div class="members">
-        <h2>Members</h2>
-        <ul>
-            <li>Dark </li>
-            <li>OMAR </li>
-            <li>Body </li>
-            <li>boby </li>
-            <li> Azzam</li>
-            <li>ineista </li>
-        </ul>
+    <div class="leader-card">
+        <img src="https://j.top4top.io/p_3702etidt1.jpg">
+        <div class="name">Doctor_Black</div>
+        <div class="rank">OWNER 👑</div>
     </div>
+
+    <div class="leader-card">
+        <img src="https://j.top4top.io/p_3702etidt1.jpg">
+        <div class="name">Dark</div>
+        <div class="rank">Founder 🎯</div>
+    </div>
+
+    <div class="leader-card">
+        <img src="https://j.top4top.io/p_3702etidt1.jpg">
+        <div class="name">OMAR</div>
+        <div class="rank">Co Leader 🧠</div>
+    </div>
+
 </div>
 
 <a class="discord-btn" href="https://discord.gg/ANy2Qjgn" target="_blank">
     دخول سيرفر الديسكورد 💬
 </a>
 
+<!-- شكر خاص تحت زر الديسكورد -->
+<div class="special-thanks">
+    <h2>✨ شكر خاص ✨</h2>
+
+    <div class="thanks-names">
+        <span>Body</span>
+        <span>Boby</span>
+        <span>Azzam</span>
+        <span>Ineista</span>
+        <span>Shadow</span>
+        <span>Ghost</span>
+    </div>
+</div>
+
+<footer>
     © 2026 W Walker Gang - All Rights Reserved
 </footer>
 
 <script>
-/* خلفية خطوط هندسية متحركة */
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 
@@ -187,8 +204,8 @@ for(let i = 0; i < 80; i++){
     particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 1,
-        vy: (Math.random() - 0.5) * 1
+        vx: (Math.random() - 0.5),
+        vy: (Math.random() - 0.5)
     });
 }
 
